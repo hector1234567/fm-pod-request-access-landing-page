@@ -47,7 +47,6 @@ body {
   background-repeat: no-repeat;
 
   position: relative;
-  padding-bottom: 9rem;
 }
 
 .landing-page::after {
@@ -58,7 +57,7 @@ body {
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -5.2rem;
 }
 
 .landing-page__wrapper {
