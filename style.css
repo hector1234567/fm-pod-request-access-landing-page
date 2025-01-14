@@ -110,6 +110,7 @@ body {
 .form {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .form__input {
@@ -120,11 +121,20 @@ body {
   border: none;
   height: 5.2rem;
   border-radius: 5rem;
-  color: var(--Blue-300);
+  color: var(--White);
   padding-left: 2.4rem;
   padding-right: 18.1rem;
   width: 44.8rem;
   font-weight: 700;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: var(--Blue-900);
+}
+
+.form__input:focus:invalid {
+  border: 0.2rem solid var(--Red);
 }
 
 .form__input::placeholder {
@@ -135,13 +145,27 @@ body {
   font-weight: inherit;
 }
 
+.form__error-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--Red);
+  position: absolute;
+  bottom: -2.8rem;
+  left: 2.4rem;
+  opacity: 0;
+}
+
+.form__input:focus:invalid ~ .form__error-message {
+  opacity: 1;
+}
+
 .form__button,
 .form__button:link,
 .form__button:visited {
   font-family: inherit;
   align-self: stretch;
   width: 18.1rem;
-  border: 0.4rem solid var(--Blue-900);
+  margin: 0.4rem;
   border-radius: 5rem;
   display: flex;
   align-items: center;
@@ -150,8 +174,8 @@ body {
   background-color: rgb(var(--Green));
   color: rgb(var(--Blue-950));
   font-weight: 700;
-
-  margin-left: -18.1rem;
+  border: none;
+  margin-left: -18.5rem;
   cursor: pointer;
 }
 
@@ -254,5 +278,9 @@ body {
 
   .form__input {
     width: 100%;
+  }
+
+  .form__error-message {
+    left: unset;
   }
 }

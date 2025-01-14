@@ -49,12 +49,17 @@
           </p>
           <form action="#" method="post" class="landing-page__form form">
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Email address"
               class="form__input"
+              autocomplete="off"
+              required
             />
             <button type="submit" class="form__button">Request access</button>
+            <span class="form__error-message"
+              >Oops! Please check your email</span
+            >
           </form>
           <div class="landing-page__logos">
             <img src="assets/desktop/spotify.svg" alt="Spotify" />
